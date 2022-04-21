@@ -1,0 +1,238 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+
+{% block header %}
+<li class="has-children">
+  <a href="#" class="nav-link"><span class="icon-info"></span></a>
+  <ul class="dropdown arrow-top">
+    <li><a href="{% url 'team' %}" class="nav-link">Наша команда</a></li>
+    <li><a href="{% url 'about' %}" class="nav-link">О нас</a></li>
+    <li class="has-children">
+      <a href="#" class="nav-link">Отзывы</a>
+      <ul class="dropdown arrow-top">
+        <li><a href="{% url 'reviews' %}" class="nav-link">Читать отзывы</a></li>
+        <li><a href="{% url 'makeReview' %}" class="nav-link">Написать отзыв</a></li>
+      </ul>
+    </li>
+  </ul>
+</li>
+<li><a href="#home" class="nav-link">Главная</a></li>
+<li><a href="#prices-services" class="nav-link">Цены и услуги</a></li>
+<li><a href="#gallery" class="nav-link">Примеры работ</a></li>
+<li><a href="#contacts" class="nav-link">Контакты</a></li>
+<li><a href="https://wa.me/79684705401" target="_blank" class="nav-link">Записаться</a></li>
+<li><a href="admin" class="nav-link"><span class="icon-sign-in"></span></a></li>
+{% endblock %}
+
+{% block title %}
+MonStudio &mdash; Студия маникюра и педикюра
+{% endblock %}
+
+{% block name_page %}
+<p class="sub-text mb-4 d-block">Студия маникюра и педикюра</p>
+<a data-fancybox data-ratio="2" href='{% static "Video/mspromo.mp4" %}' class="d-inline-flex align-items-center">
+  <span class="play-button d-block mr-3">
+    <span class="icon-play"></span>
+  </span>
+  <span class="text-white">Смотреть видео</span>
+</a>
+{% endblock %}
+
+{% block content %}
+<section class="site-section" id="prices-services">
+  <div class="clearfix mb-5 pb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7 text-left heading-wrap">
+          <h2 style="color:black; font-family:monserrat">Цены и услуги</h2>
+          <p>Мы предлагаем широкий спектр услуг по привлекательной цене.</p>
+        </div>
+        <div class="col-md-5 align-self-center text-md-right">
+          <a href="#" class="btn btn-primary customPrevBtn"><span class="icon-chevron-left"></span></a>
+          <a href="#" class="btn btn-primary customNextBtn"><span class="icon-chevron-right"></span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="owl-carousel centernonloop">
+    <a href='{% static "images/nailprice.jpg" %}' class="item-wrap fancybox">
+      <div class="item-class">
+        <div class="text">
+          <h2 style="color:white; font-family:monserrat">Маникюр</h2>
+        </div>
+        <img src='{% static "images/manic.jpg" %}' alt="" class="img-fluid">
+      </div>
+    </a>
+    <a href='{% static "images/nailprice.jpg" %}' class="item-wrap fancybox">
+      <div class="item-class">
+        <div class="text">
+          <h2 style="color:white; font-family:monserrat">Педикюр</h2>
+        </div>
+        <img src='{% static "images/pedic.jpg" %}' alt="" class="img-fluid">
+      </div>
+    </a>
+    <a href='{% static "images/browpr.jpg" %}' class="item-wrap fancybox">
+      <div class="item-class">
+        <div class="text">
+          <h2 style="color:white; font-family:monserrat">Брови</h2>
+        </div>
+        <img src='{% static "images/brw.jpg" %}' alt="" class="img-fluid">
+      </div>
+    </a>
+  </div>
+</section> <!-- .section -->
+
+<section class="site-section" id="gallery">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 heading-wrap text-center mb-5">
+        <h2 style="color:black; font-family:monserrat">Примеры работ</h2>
+      </div>
+    </div>
+    <div class="row justify-content-center mb-5" data-aos="fade">
+      <div id="filters" class="filters text-center button-group col-md-7">
+        <button class="btn btn-primary active" data-filter="*">Все</button>
+        <button class="btn btn-primary" data-filter=".web">Маникюр</button>
+        <button class="btn btn-primary" data-filter=".design">Педикюр</button>
+        <button class="btn btn-primary" data-filter=".brand">Брови</button>
+      </div>
+    </div>
+    <div id="posts" class="row no-gutter">
+      <div class="item web col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-4">
+        <a href='{% static "images/ma_1.jpg" %}' class="item-wrap fancybox">
+          <span class="icon-search2"></span>
+          <img class="img-fluid" src='{% static "images/ma_1.jpg" %}'>
+        </a>
+      </div>
+      <div class="item web col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-4">
+        <a href='{% static "images/ma_2.jpg" %}' class="item-wrap fancybox">
+          <span class="icon-search2"></span>
+          <img class="img-fluid" src='{% static "images/ma_2.jpg" %}'>
+        </a>
+      </div>
+      <div class="item brand col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-4">
+        <a href='{% static "images/br_1.jpg" %}' class="item-wrap fancybox">
+          <span class="icon-search2"></span>
+          <img class="img-fluid" src='{% static "images/br_1.jpg" %}'>
+        </a>
+      </div>
+      <div class="item design col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-4">
+        <a href='{% static "images/pe_1.jpg" %}' class="item-wrap fancybox">
+          <span class="icon-search2"></span>
+          <img class="img-fluid" src='{% static "images/pe_1.jpg" %}'>
+        </a>
+      </div>
+      <div class="item web col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-4">
+        <a href='{% static "images/ma_5.jpg" %}' class="item-wrap fancybox">
+          <span class="icon-search2"></span>
+          <img class="img-fluid" src='{% static "images/ma_5.jpg" %}'>
+        </a>
+      </div>
+      <div class="item brand col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-4">
+        <a href='{% static "images/br_2.jpg" %}' class="item-wrap fancybox">
+          <span class="icon-search2"></span>
+          <img class="img-fluid" src='{% static "images/br_2.jpg" %}'>
+        </a>
+      </div>
+      <div class="item web col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-4">
+        <a href='{% static "images/ma_3.jpg" %}' class="item-wrap fancybox">
+          <span class="icon-search2"></span>
+          <img class= "img-fluid" src='{% static "images/ma_3.jpg" %}'>
+        </a>
+      </div>
+      <div class="item design col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-4">
+        <a href='{% static "images/pe_3.jpg" %}' class="item-wrap fancybox">
+          <span class="icon-search2"></span>
+          <img class="img-fluid" src='{% static "images/pe_3.jpg" %}'>
+        </a>
+      </div>
+      <div class="item web col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-4">
+        <a href='{% static "images/ma_4.jpg" %}' class="item-wrap fancybox">
+          <span class="icon-search2"></span>
+          <img class="img-fluid" src='{% static "images/ma_4.jpg" %}'>
+        </a>
+      </div>
+      <div class="item design col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-4">
+        <a href='{% static "images/pe_2.jpg" %}' class="item-wrap fancybox">
+          <span class="icon-search2"></span>
+          <img class="img-fluid" src='{% static "images/pe_2.jpg" %}'>
+        </a>
+      </div>
+      <div class="item brand col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-4">
+        <a href='{% static "images/br_4.jpg" %}' class="item-wrap fancybox">
+          <span class="icon-search2"></span>
+          <img class="img-fluid" src='{% static "images/br_4.jpg" %}'>
+        </a>
+      </div>
+      <div class="item brand col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-4">
+        <a href='{% static "images/br_3.jpg" %}' class="item-wrap fancybox">
+          <span class="icon-search2"></span>
+          <img class="img-fluid" src='{% static "images/br_3.jpg" %}'>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="site-section element-animate" id="contacts">
+  <div class="mb-5">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12 text-center heading-wrap">
+          <h2 style="color:black; font-family:monserrat">Контакты</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div align="center">
+    <p>Каширское шоссе, 7А, Домодедово, Московская область, Россия.</p>
+      <p>
+        <a href="tel:+79684705401">
+          <span class="icon-phone"></span>
+          <span>+7 968 470 54 01</span>
+        </a>
+      </p>
+      <p>
+        <a href="tel:+79261533738">
+          <span class="icon-phone"></span>
+          <span>+7 926 153 37 38</span>
+        </a>
+      </p>
+      <p>Режим работы: ежедневно с 09:00 до 21:00</p>
+    </div>
+  <p align="center">
+    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A1227f9da1a67d86747befc5871b5427dd0d4bfe246dce773ac249ca2847a99c0&amp;width=70%&amp;height=500px&amp;lang=ru_RU&amp;scroll=true"></script>
+  </p>
+  <div align="center">
+    <div style="margin-left:15%; margin-right:15%">
+      <div align="center" style="mt-2">
+        <div class="container">
+          <div class="accordion" id="accordionExample">
+            <h4>
+              <a href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <span class="icon-message">
+                  Обратная связь
+                </span>
+              </a>
+            </h4>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div class="accordion-body">
+                <form method="post">
+                  {% csrf_token %}
+                  <p style="mt-2">{{ form.name }}</p>
+                  <p style="mt-2">{{ form.phone }}</p>
+                  <p style="mt-2">{{ form.txt }}</p>
+                  <button type="submit" class="btn btn-primary" style="margin-bottom:20px">Отправить</button>
+                  <span>{{ error }}</span>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

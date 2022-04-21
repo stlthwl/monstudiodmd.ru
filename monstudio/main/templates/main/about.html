@@ -1,0 +1,162 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+
+{% block header %}
+<li class="has-children">
+  <a href="#" class="nav-link"><span class="icon-info"></span></a>
+  <ul class="dropdown arrow-top">
+    <li><a href="{% url 'team' %}" class="nav-link">Наша команда</a></li>
+    <li><a href="{% url 'about' %}" class="nav-link">О нас</a></li>
+    <li class="has-children">
+      <a href="#" class="nav-link">Отзывы</a>
+      <ul class="dropdown arrow-top">
+        <li><a href="{% url 'reviews' %}" class="nav-link">Читать отзывы</a></li>
+        <li><a href="{% url 'makeReview' %}" class="nav-link">Написать отзыв</a></li>
+      </ul>
+    </li>
+  </ul>
+</li>
+<li><a href="/#home" class="nav-link">Главная</a></li>
+<li><a href="/#prices-services" class="nav-link">Цены и услуги</a></li>
+<li><a href="/#gallery" class="nav-link">Примеры работ</a></li>
+<li><a href="/#contacts" class="nav-link">Контакты</a></li>
+<li><a href="https://wa.me/79684705401" target="_blank" class="nav-link">Записаться</a></li>
+<li><a href="admin" class="nav-link"><span class="icon-sign-in"></span></a></li>
+{% endblock %}
+
+{% block title %}
+О нас
+{% endblock %}
+
+{% block name_page %}
+<h2 style="color:white; font-family:italic">О нас</h2>
+{% endblock %}
+
+{% block content %}
+<section class="site-section" id="promotions">
+  <div class="container">
+
+    <div class="col-md-7 text-left heading-wrap mb-5">
+      <h2 style="color:black; font-family:monserrat">Почему мы?</h2>
+      <h4 style="font-family:monserrat; color:grey">
+        Наши преимущества
+      </h4>
+    </div>
+
+    <div class="container">
+      <div class="accordion" id="accordionExample">
+
+        <div class="accordion-item">
+          <h2 class="mb-0 rounded mb-2">
+            <a href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Безопасность
+            </a>
+          </h2>
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="accordion-body">
+              <p>Все инструменты проходят полный цикл стерилизации</p>
+              <img src='{% static "images/safe.jpg" %}' class="img-fluid mb-5">
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="mb-0 rounded mb-2">
+            <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Качественные материалы
+            </a>
+          </h2>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="accordion-body">
+              <p>KLIO, GLOSS, Nail Republic, Voice, Vogue, Grattol, Луи Филипп и другие </p>
+              <p>Палитра гель-лаков более 300 цветов</p>
+              <img src='{% static "images/lak1.jpg" %}' class="img-fluid mb-5">
+              <img src='{% static "images/lak2.jpg" %}' class="img-fluid mb-5">
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="mb-0 rounded mb-2">
+            <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Опытные специалисты
+            </a>
+          </h2>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+            <div class="accordion-body">
+              <p>У нас работают профессионалы с опытом работы более 5 лет</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="mb-0 rounded mb-2">
+            <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              Гарантия качества
+            </a>
+          </h2>
+          <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+            <div class="accordion-body">
+              <p>Мы очень трепетно относимся к качеству предоставляемых нами услуг, поэтому даем своим клиентам гарантию на наши работы</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="mb-0 rounded mb-2">
+            <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+              Экономия времени
+            </a>
+          </h2>
+          <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+            <div class="accordion-body">
+                <p>Услуги в 4 и 6 рук</p>
+                <video width="100%" height="500" controls>
+                  <source src='{% static "Video/fourarms.mp4" %}'>
+                </video>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="mb-0 rounded mb-2">
+            <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+              Комфорт
+            </a>
+          </h2>
+          <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+            <div class="accordion-body">
+              <p>
+                <span class="icon-coffee"> Чай, кофе, вкусняшки</span><br>
+                <span class="icon-wifi"> Wi-Fi</span><br>
+                <span class="icon-tv"> TV</span>
+              </p>
+              <img src='{% static "images/coffee.jpg" %}' class="img-fluid mb-5">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+<section class="site-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <img src='{% static "images/sveta2.jpg" %}' alt="Free website template by Free-Template.co" class="img-fluid mb-5">
+        <div class="mx-auto w-75">
+          <h3 style="color:black; font-family:monserrat">Ждем Вас у нас в студии!</h3>
+          <hr align="center" color="purple" width="25%" size="20">
+          <p>
+            Мы ценим своих клиентов и делаем все, чтобы Вы были довольны!
+          </p>
+          <p><a href="https://wa.me/79684705401" target="_blank" class="btn btn-primary">Записаться</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

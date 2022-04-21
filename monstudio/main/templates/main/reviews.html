@@ -1,0 +1,54 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Отзывы
+{% endblock %}
+
+{% block header %}
+<li class="has-children">
+  <a href="#" class="nav-link"><span class="icon-info"></span></a>
+  <ul class="dropdown arrow-top">
+    <li><a href="{% url 'team' %}" class="nav-link">Наша команда</a></li>
+    <li><a href="{% url 'about' %}" class="nav-link">О нас</a></li>
+    <li class="has-children">
+      <a href="#" class="nav-link">Отзывы</a>
+      <ul class="dropdown arrow-top">
+        <li><a href="{% url 'reviews' %}" class="nav-link">Читать отзывы</a></li>
+        <li><a href="{% url 'makeReview' %}" class="nav-link">Написать отзыв</a></li>
+      </ul>
+    </li>
+  </ul>
+</li>
+<li><a href="/#home" class="nav-link">Главная</a></li>
+<li><a href="/#prices-services" class="nav-link">Цены и услуги</a></li>
+<li><a href="/#gallery" class="nav-link">Примеры работ</a></li>
+<li><a href="/#contacts" class="nav-link">Контакты</a></li>
+<li><a href="https://wa.me/79684705401" target="_blank" class="nav-link">Записаться</a></li>
+<li><a href="admin" class="nav-link"><span class="icon-sign-in"></span></a></li>
+{% endblock %}
+
+{% block name_page %}
+<h2 style="color:white; font-family:italic">Отзывы клиентов</h2>
+{% endblock %}
+
+{% block content %}
+{% if review %}
+    {% for i in review %}
+        <div class="container">
+            <div class="col-12 text-center">
+                <div>
+                    <div class="alert alert-secondary mt-3">
+                        <h4 align="center" style="font-family:italic">{{ i.name }}</h4>
+                        <p style="color: grey; font-family: monserrat" >{{ i.txt }}</p>
+                        <hr width="30%" align="center" size="5">
+                        <h4 align="center" style="font-family:italic">{{ i.owner }}</h4>
+                        <p style="color: grey; font-family: monserrat" >{{ i.answer }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% else %}
+    <h4 align="center" style="font-family:monserrat">Оставьте отзыв и он появится на странице</h4>
+{% endif %}
+{% endblock%}

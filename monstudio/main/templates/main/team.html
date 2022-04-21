@@ -1,0 +1,77 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+
+{% block title %}
+Команда
+{% endblock %}
+
+{% block header %}
+<li class="has-children">
+    <a href="#" class="nav-link"><span class="icon-info"></span></a>
+    <ul class="dropdown arrow-top">
+        <li><a href="{% url 'team' %}" class="nav-link">Наша команда</a></li>
+        <li><a href="{% url 'about' %}" class="nav-link">О нас</a></li>
+        <li class="has-children">
+            <a href="#" class="nav-link">Отзывы</a>
+            <ul class="dropdown arrow-top">
+                <li><a href="{% url 'reviews' %}" class="nav-link">Читать отзывы</a></li>
+                <li><a href="{% url 'makeReview' %}" class="nav-link">Написать отзыв</a></li>
+            </ul>
+        </li>
+    </ul>
+</li>
+<li><a href="/#home" class="nav-link">Главная</a></li>
+<li><a href="/#prices-services" class="nav-link">Цены и услуги</a></li>
+<li><a href="/#gallery" class="nav-link">Примеры работ</a></li>
+<li><a href="/#contacts" class="nav-link">Контакты</a></li>
+<li><a href="https://wa.me/79684705401" target="_blank" class="nav-link">Записаться</a></li>
+<li><a href="admin" class="nav-link"><span class="icon-sign-in"></span></a></li>
+{% endblock %}
+
+{% block name_page %}
+<h2 style="color:white; font-family:italic">Наша команда</h2>
+{% endblock %}
+
+{% block content %}
+<section class="site-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mb-5">
+                <img src='{% static "images/master1.jpg" %}' alt="Светлана" class="img-fluid mb-4">
+                <h3 style="font-family:italic">Светлана</h3>
+                <hr width="30%" align="left" size="5">
+                <p>Мастер маникюра и педикюра</p>
+                <p>
+                    <a href="https://wa.me/79684705401" class="pl-0 pr-3" target="_blank"><span class="icon-whatsapp"></span></a>
+                    <a href="https://t.me/MonStudio_bot" class="pl-3 pr-3" target="_blank"><span class="icon-telegram"></span></a>
+                    <a href="https://www.instagram.com/mon_studio_dmd/" class="pl-3 pr-3" target="_blank"><span class="icon-instagram"></span></a>
+                </p>
+                <p><a href="https://wa.me/79684705401" target="_blank" class="btn btn-primary">Записаться к Светлане</a></p>
+            </div>
+            <div class="col-md-6 mb-5">
+                <img src='{% static "images/master2.jpg" %}' alt="Елена" class="img-fluid mb-4">
+                <h3 style="font-family:italic">Елена</h3>
+                <hr width="30%" align="left" size="5">
+                <p>Мастер маникюра и педикюра</p>
+                 <p>
+                    <a href="https://wa.me/79261533738" class="pl-0 pr-3" target="_blank"><span class="icon-whatsapp"></span></a>
+                    <a href="https://t.me/MonStudio_bot" class="pl-3 pr-3" target="_blank"><span class="icon-telegram"></span></a>
+                    <a href="https://www.instagram.com/mon_studio_dmd/" class="pl-3 pr-3" target="_blank"><span class="icon-instagram"></span></a>
+                </p>
+                <p><a href="https://wa.me/79261533738" target="_blank" class="btn btn-primary">Записаться к Елене</a></p>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-12 text-center">
+                <img src='{% static "images/team2.jpg" %}' alt="" class="img-fluid mb-5">
+                <div class="mx-auto w-75">
+                    <h3 style="color:black; font-family:monserrat">Будем рады видеть Вас у нас в студии!</h3>
+                    <hr align="center" color="purple" width="25%" size="20">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

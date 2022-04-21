@@ -1,0 +1,185 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>{% block title %}{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href='{% static "fonts/icomoon/style.css" %}'>
+    <link rel="stylesheet" href='{% static "css/bootstrap.min.css" %}'>
+    <link rel="stylesheet" href='{% static "css/magnific-popup.css" %}'>
+    <link rel="stylesheet" href='{% static "css/jquery-ui.css" %}'>
+    <link rel="stylesheet" href='{% static "css/owl.carousel.min.css" %}'>
+    <link rel="stylesheet" href='{% static "css/owl.theme.default.min.css" %}'>
+    <link rel="stylesheet" href='{% static "css/bootstrap-datepicker.css" %}'>
+    <link rel="stylesheet" href='{% static "fonts/flaticon/font/flaticon.css" %}'>
+    <link rel="stylesheet" href='{% static "css/aos.css" %}'>
+    <link rel="stylesheet" href='{% static "css/jquery.fancybox.min.css" %}'>
+    <link rel="stylesheet" href='{% static "css/style.css" %}'>
+    
+    <link rel="apple-touch-icon" sizes="57x57" href='{% static "favicon/apple-icon-57x57.png" %}'>
+    <link rel="apple-touch-icon" sizes="60x60" href='{% static "favicon/apple-icon-60x60.png" %}'>
+    <link rel="apple-touch-icon" sizes="72x72" href='{% static "favicon/apple-icon-72x72.png" %}'>
+    <link rel="apple-touch-icon" sizes="76x76" href='{% static "favicon/apple-icon-76x76.png" %}'>
+    <link rel="apple-touch-icon" sizes="114x114" href='{% static "favicon/apple-icon-114x114.png" %}'>
+    <link rel="apple-touch-icon" sizes="120x120" href='{% static "favicon/apple-icon-120x120.png" %}'>
+    <link rel="apple-touch-icon" sizes="144x144" href='{% static "favicon/apple-icon-144x144.png" %}'>
+    <link rel="apple-touch-icon" sizes="152x152" href='{% static "favicon/apple-icon-152x152.png" %}'>
+    <link rel="apple-touch-icon" sizes="180x180" href='{% static "favicon/apple-icon-180x180.png" %}'>
+    <link rel="icon" type="image/png" sizes="192x192"  href='{% static "favicon/android-icon-192x192.png" %}'>
+    <link rel="icon" type="image/png" sizes="32x32" href='{% static "favicon/favicon-32x32.png" %}'>
+    <link rel="icon" type="image/png" sizes="96x96" href='{% static "favicon/favicon-96x96.png" %}'>
+    <link rel="icon" type="image/png" sizes="16x16" href='{% static "favicon/favicon-16x16.png" %}'>
+    <link rel="manifest" href='{% static "favicon/manifest.json" %}'>
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content='{% static "favicon/ms-icon-144x144.png" %}'>
+    <meta name="theme-color" content="#ffffff">
+  </head>
+
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+  <div id="overlayer"></div>
+  <div class="loader">
+    <div class="spinner-border text-primary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+  <div class="site-wrap">
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div> <!-- .site-mobile-menu -->
+    <div class="site-navbar-wrap">
+      <div class="site-navbar-top">
+        <div class="container py-3">
+          <div class="row align-items-center">
+            <div class="col-6">
+              <div class="d-flex mr-auto">
+                <a href="tel:+79684705401" class="d-flex align-items-center mr-4">
+                  <span class="icon-phone mr-2"></span>
+                  <span class="d-none d-md-inline-block">+7 968 470 54 01</span>
+                </a>
+                <a href="tel:+79261533738" class="d-flex align-items-center mr-auto">
+                  <span class="icon-phone mr-2"></span>
+                  <span class="d-none d-md-inline-block">+7 926 153 37 38</span>
+                </a>
+              </div>
+            </div>
+            <div class="col-6 text-right">
+              <div class="mr-auto">
+                <a href="https://wa.me/79684705401" class="p-2 pl-0" target="_blank"><span class="icon-whatsapp"></span></a>
+                <a href="https://t.me/MonStudio_bot" class="p-2 pl-0" target="_blank"><span class="icon-telegram"></span></a>
+                <a href="https://www.instagram.com/mon_studio_dmd/" class="p-2 pl-0" target="_blank"><span class="icon-instagram"></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="site-navbar site-navbar-target js-sticky-header">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-2">
+              <h1 class="my-0 site-logo"><a href="/">MonStudio</a></h1>
+            </div>
+            <div class="col-10">
+              <nav class="site-navigation text-right" role="navigation">
+                <div class="container">
+                  <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
+                 <ul class="site-menu main-menu js-clone-nav d-none d-lg-block">
+                   {% block header %}{% endblock %}
+                 </ul>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="site-blocks-cover overlay" style="background-image: url('{% static 'images/wallpaper.jpg' %}');" data-aos="fade" data-stellar-background-ratio="0.5"id="home">
+      <div class="container">
+        <div class="row align-items-center text-center justify-content-center">
+          <div class="col-md-8">
+           {% block name_page %}{% endblock %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% block content %}{% endblock %}
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <div class="row mb-5">
+              <div class="col-12">
+                <h3 class="footer-heading mb-4">Наш адрес</h3>
+                <p>Каширское шоссе 7А, Домодедово,<br>Московская область, Россия.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="row mb-5">
+              <div class="col-md-12">
+                <h3 class="footer-heading mb-4">Ссылки</h3>
+              </div>
+              <div class="col-md-6 col-lg-6">
+                <ul class="list-unstyled">
+                  <li><a href="/">Главная</a></li>
+                  <li><a href="#">Записаться</a></li>
+                </ul>
+              </div>
+              <div class="col-md-6 col-lg-6">
+                <ul class="list-unstyled">
+	              <li><a href="tel:+79684705401">+7 968 470 54 01</a></li>
+                  <li><a href="tel:+79261533738">+7 926 153 37 38</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <div class="mb-5">
+              <h3 class="footer-heading mb-2">Мы в соцсетях</h3>
+                <div>
+                  <a href="https://wa.me/79684705401" class="pl-0 pr-3" target="_blank"><span class="icon-whatsapp"></span></a>
+                  <a href="https://t.me/MonStudio_bot" class="pl-3 pr-3" target="_blank"><span class="icon-telegram"></span></a>
+                  <a href="https://www.instagram.com/mon_studio_dmd/" class="pl-3 pr-3" target="_blank"><span class="icon-instagram"></span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row pt-5 mt-5 text-center">
+          <div class="col-md-12">
+            <p>
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            &copy;<script>document.write(new Date().getFullYear());</script> Mon Studio Все права защищены | Создано с Django by <a href="https://wa.me/79652634170" target="_blank" >stlthwl</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+          </div>
+        </div>
+    </footer>
+  </div>
+
+  <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+  <script src="{% static 'js/jquery-ui.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/jquery.countdown.min.js' %}"></script>
+  <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap-datepicker.min.js' %}"></script>
+  <script src="{% static 'js/aos.js' %}"></script>
+  <script src="{% static 'js/jquery.sticky.js' %}"></script>
+  <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+
+  </body>
+</html>
